@@ -3,14 +3,14 @@ server:
 
 eureka:
   instance:
-    hostname: ${EUREKA_HOST:localhost}
+    hostname: ${EUREKA_HOST:eureka-server.prod.internal}
     prefer-ip-address: true
 
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:${SERVER_PORT:8761}/eureka/
+      defaultZone: http://${EUREKA_HOST:eureka-server.prod.internal}:${SERVER_PORT:8761}/eureka/
 
   server:
     enable-self-preservation: true
